@@ -1,32 +1,18 @@
 using System;
 namespace MyProject.Classes
 {
-    public class A { 
-        private bool isAlive = 0 ;
-        private bool next_state = 0 ; // first loop determine the future states based on the old states then set the new ones
-        static dimension ;
+    public class Cell { 
+        public int state {get; set;} 
+        public int nextState {get; set;}  // why ? :first loop determine the future states based on the old states then set the new ones
+        static int dimension {get; set;}
 
-        public A(){}
+        public Cell(){
+            state = 0 ;
+            nextState = 0 ;
+        }
         
-        public int get
-        /*public bool is_alive(){
-            return isAlive;
-        }
-
-        public void switch_state(){
-            isAlive = next_state;
-        }
-
-        public void kill(){
-            next_state = 0;
-        }
-
-        public void revive(){
-            next_state = 1;
-        }*/
-
-        public setDimension(int a){
-            dimension = a ;
+        public void update(){
+            state = nextState ;
         }
      }
 }
